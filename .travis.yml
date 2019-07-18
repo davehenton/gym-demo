@@ -1,3 +1,7 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=1efc0ae6a768b801598648d8e9842a781e3f08f6ee3557bbc5604a8d2dc1e6da
+
 language: python
 
 git:
