@@ -4,6 +4,12 @@ env:
 
 language: python
 
+before_script:
+  # cc-test-reporter is the tool used to send test coverage information to CodeClimate
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 git:
   depth: false
 
@@ -29,11 +35,7 @@ matrix:
 install:
   - pip install tox
   
-before_script:
-  # cc-test-reporter is the tool used to send test coverage information to CodeClimate
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+
 
 after_script:
   - pwd
