@@ -36,13 +36,6 @@ install:
   - pip install tox
   
 
-
-after_script:
-  - pwd
-  - ls -al
-  - ./cc-test-reporter after-build --debug --exit-code $TRAVIS_TEST_RESULT
-
-
 branches:
   only:
   - "master"
@@ -51,3 +44,10 @@ cache:
   directories:
     - $HOME/.cache/pip
     - $HOME/.cache/pre-commit
+    
+ 
+after_script:
+  - pwd
+  - ls -al
+  - ./cc-test-reporter after-build --debug --exit-code $TRAVIS_TEST_RESULT
+
